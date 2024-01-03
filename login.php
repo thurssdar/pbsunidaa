@@ -84,7 +84,7 @@ if(isset($_POST['tombol'])){
 
       <form action="login.php" method="post">
         <div class="input-group mb-3">
-          <input type="email" name="email" class="form-control" placeholder="Email">
+          <input type="nim" name="nim" class="form-control" placeholder="Nim">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>

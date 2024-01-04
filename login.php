@@ -20,7 +20,7 @@ if(isset($_POST['tombol'])){
   //5. menghitung jumlah hasil query
   $hitung = mysqli_num_rows($result);
 
-  if($hitung > 0){
+  if($hitung){
     //Proses Login
 
     // Mengambil seluruh Data Login
@@ -28,14 +28,21 @@ if(isset($_POST['tombol'])){
 
     $id   = $data ['id'];
     $nim = $data ['nim'];
+  
+   if($_POST['ingat'] == "yes"){
+    // pembuatan cookei
+    setcookie("cid",$id,time() + (60*60*24*3), "/");
+    setcookie("cnama",$nama, time() + (60*60*24*3), "/");
+    setcookie("cemail",$email, time() + (60*60*24*3), "/");
+   }else{
 
     // Pembuatan session
     $_SESSION['sid'] = $id;
-    $_SESSION['snim'] = $nama;
+    $_SESSION['snim'] = $nim;
     $_SESSION['semail'] = $email;
-
+   }
     // Update Las_LOG
-    $qry_update = "UPDATE users SET last_log='now()' WHERE id= '$id'";
+    $qry_update = "UPDATE users SET last_log=now() WHERE id= '$id'";
     $res_update = mysqli_query($con, $qry_update);
 
     //Pengalihan Ke Halaman Index
@@ -84,10 +91,10 @@ if(isset($_POST['tombol'])){
 
       <form action="login.php" method="post">
         <div class="input-group mb-3">
-          <input type="nim" name="nim" class="form-control" placeholder="Nim">
+          <input type="text" name="nim" class="form-control" placeholder="Nim">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+              <span i class="fa-solid fa-address-card"></i></span>
             </div>
           </div>
         </div>
@@ -95,7 +102,7 @@ if(isset($_POST['tombol'])){
           <input type="password" name="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+              <span class="fas fa-lock"></i></span>
             </div>
           </div>
         </div>

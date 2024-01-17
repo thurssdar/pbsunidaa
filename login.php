@@ -8,11 +8,11 @@ if(isset($_POST['tombol'])){
   include_once("koneksi.php");
 
   //2. Mengambil Nilai Dari Input
-  $nim =$_POST['nim'];
+  $email =$_POST['nim'];
   $password = md5($_POST['password']);
 
   //3. Menjalankan Query
-  $qry = "SELECT * FROM users WHERE nim='$nim' AND password='$password'";
+  $qry = "SELECT * FROM users WHERE email='$email' AND password='$password'";
 
   //4. Jalankan Query
   $result = mysqli_query($con,$qry);
@@ -25,28 +25,28 @@ if(isset($_POST['tombol'])){
 
     // Mengambil seluruh Data Login
     $data = mysqli_fetch_array($result);
-
     $id   = $data ['id'];
-    $nim = $data ['nim'];
-  
-   if($_POST['ingat'] == "yes"){
-    // pembuatan cookei
-    setcookie("cid",$id,time() + (60*60*24*3), "/");
-    setcookie("cnama",$nama, time() + (60*60*24*3), "/");
-    setcookie("cemail",$email, time() + (60*60*24*3), "/");
-   }else{
+    $nama = $data ['nama'];
 
+    if($_POST['ingat'] == "yes"){
+      //pembutan cookie
+      setcookie("cid",$id, time() + (60*60*24*3), "/");
+      setcookie("cnama",$nama, time() + (60*60*24*3), "/");
+      setcookie("cemail",$email, time() + (60*60*24*3), "/");
+
+    }else{
     // Pembuatan session
     $_SESSION['sid'] = $id;
-    $_SESSION['snim'] = $nim;
+    $_SESSION['snama'] = $nama;
     $_SESSION['semail'] = $email;
-   }
+
+    }
+
     // Update Las_LOG
     $qry_update = "UPDATE users SET last_log=now() WHERE id= '$id'";
     $res_update = mysqli_query($con, $qry_update);
 
-    //Pengalihan Ke Halaman Index
-    
+    //Pengalihan Ke Halaman Index 
   ?>
     <script>
         document.location="index.php";
@@ -91,10 +91,10 @@ if(isset($_POST['tombol'])){
 
       <form action="login.php" method="post">
         <div class="input-group mb-3">
-          <input type="text" name="nim" class="form-control" placeholder="Nim">
+          <input type="email" name="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span i class="fa-solid fa-address-card"></i></span>
+              <span class="fas fa-envelope"></span>
             </div>
           </div>
         </div>
@@ -102,14 +102,14 @@ if(isset($_POST['tombol'])){
           <input type="password" name="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-lock"></i></span>
+              <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
-              <input type="checkbox" id="remember">
+              <input type="checkbox" id="remember" name="ingat" value="yes">
               <label for="remember">
                 Remember Me
               </label>

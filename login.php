@@ -12,7 +12,7 @@ if(isset($_POST['tombol'])){
   $password = md5($_POST['password']);
 
   //3. Menjalankan Query
-  $qry = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+  $qry = "SELECT * FROM admins WHERE email='$email' AND password='$password'";
 
   //4. Jalankan Query
   $result = mysqli_query($con,$qry);
@@ -43,7 +43,7 @@ if(isset($_POST['tombol'])){
     }
 
     // Update Las_LOG
-    $qry_update = "UPDATE users SET last_log=now() WHERE id= '$id'";
+    $qry_update = "UPDATE admins SET last_log=now() WHERE id= '$id'";
     $res_update = mysqli_query($con, $qry_update);
 
     //Pengalihan Ke Halaman Index 

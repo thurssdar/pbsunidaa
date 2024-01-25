@@ -14,7 +14,7 @@
           <img src="dist/img/avatar4.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Dara Shalsabila Furda</a>
+          <a href="#" class="d-block"><?php echo $l_nama ?></a>
         </div>
       </div>
 
@@ -57,16 +57,16 @@
             <a href="../widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Penjadwalan
+                Mahasiswa
                 
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="jurusan.php" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Penilaian 
+                Jurusan 
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">6</span>
               </p>

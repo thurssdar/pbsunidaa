@@ -8,7 +8,7 @@ if(isset($_POST['tombol'])){
   include_once("koneksi.php");
 
   //2. Mengambil Nilai Dari Input
-  $email =$_POST['nim'];
+  $email =$_POST['email'];
   $password = md5($_POST['password']);
 
   //3. Menjalankan Query
@@ -64,7 +64,7 @@ if(isset($_POST['tombol'])){
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Log in</title>
+  <title>PBS UNIDA | Log in</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">

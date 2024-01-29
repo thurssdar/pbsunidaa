@@ -65,6 +65,7 @@ include_once ("cek_login.php")
                   <tr>
                     <th>No</th>
                     <th>Kode penjadwalan</th>
+                    <th>Kode kelas</th>
                     <th>Kode MK</th>
                     <th>Mata Kuliah</th>
                     <th>Hari</th>
@@ -100,17 +101,39 @@ include_once ("cek_login.php")
                     <td><?php echo $data['jam_selesai'] ?></td>
                     <td><?php echo $data['nip'] ?></td>
                     <td><?php echo $data['dosen'] ?></td>
-                    <td>4</td>
+                    <td>
+                      <a href ="form_edit.php?id=<?php echo $data['kode_penjadwalan'] ?>" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
+                      <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['kode_penjadwalan'] ?>"><i class="fa fa-trash"></i></button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="hapus<?php echo $data['kode_penjadwalan'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                          <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                              Apakah Penjadwalan Dengan kode <b><?php echo $data['kode_penjadwalan'] ?></b> Ingin Dihapus?
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tidak</button>
+                              <a href= "proses_hapus.php?id=<?php echo $data['kode_penjadwalan'] ?>" class="btn btn-danger">Ya</a>
+                          </div>
+                          </div>
+                      </div>
+                      </div>
+                    </td>
                   </tr>
                   <?php
                   }
                   ?>
                   </tbody>
                   <tfoot>
+                  <tfoot>
                   <tr>
                     <th>No</th>
-                    <th>Kode Penjadwalan</th>
-                    <th>Kode Kelas</th>
+                    <th>Kode penjadwalan</th>
+                    <th>Kode kelas</th>
                     <th>Kode MK</th>
                     <th>Mata Kuliah</th>
                     <th>Hari</th>

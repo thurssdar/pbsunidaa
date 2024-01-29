@@ -4,6 +4,8 @@
     <a href="../../index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">PBS UNIDA</span>
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="css/all.css">
     </a>
 
     <!-- Sidebar -->
@@ -64,11 +66,10 @@
           </li>
           <li class="nav-item">
             <a href="penjadwalan.php" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="fa-regular fa-calendar"></i>
               <p>
                 Penjadwalan 
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                
               </p>
             </a>
             
@@ -79,3 +80,5 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+<script src="js/bootstrap.js"></script>
+<script src="js/all.js"></script>

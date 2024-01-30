@@ -6,7 +6,7 @@ include_once ("cek_login.php")
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Blank Page</title>
+  <title>PBS UNIDA | Blank Page</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -54,6 +54,8 @@ include_once ("cek_login.php")
     <section class="content">
 
       <!-- Default box -->
+      <div class="col-md-12 m-auto">
+      <a class="btn btn-outline-primary mb-1" href="form.php" ><i class="fa fa-user-plus"></i>  Tambah Jadwal </a>
       <div class="card">
               <div class="card-header">
                 <h3 class="card-title">DataTable with default features</h3>
@@ -102,10 +104,10 @@ include_once ("cek_login.php")
                     <td><?php echo $data['nip'] ?></td>
                     <td><?php echo $data['dosen'] ?></td>
                     <td>
-                      <a href ="form_edit.php?id=<?php echo $data['kode_penjadwalan'] ?>" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
+                      <a href ="form_edit.php?id=<?php echo $data['id'] ?>" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
                       <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['kode_penjadwalan'] ?>"><i class="fa fa-trash"></i></button>
                       <!-- Modal -->
-                      <div class="modal fade" id="hapus<?php echo $data['kode_penjadwalan'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
+                      <div class="modal fade" id="hapus<?php echo $data['id'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
                       <div class="modal-dialog">
                           <div class="modal-content">
                           <div class="modal-header">
@@ -113,11 +115,11 @@ include_once ("cek_login.php")
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                              Apakah Penjadwalan Dengan kode <b><?php echo $data['kode_penjadwalan'] ?></b> Ingin Dihapus?
+                              Apakah Penjadwalan Dengan kode <b><?php echo $data['id'] ?></b> Ingin Dihapus?
                           </div>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tidak</button>
-                              <a href= "proses_hapus.php?id=<?php echo $data['kode_penjadwalan'] ?>" class="btn btn-danger">Ya</a>
+                              <a href= "proses_hapus.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Ya</a>
                           </div>
                           </div>
                       </div>

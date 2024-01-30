@@ -49,10 +49,13 @@
             <input type="date" name="tanggal" class="form-control" id="Tanggal" aria-describedby="tanggalHelp">
         </div>
 
+        <div class="mb-3">
+        <label for="jam" class="form-label">JAM</label>
+        <input type="jam" class="form-control timepicker-input" data-target="#timepicker"/>
         <div class="input-group date" id="timepicker" data-target-input="nearest">
-        <input type="text" class="form-control timepicker-input" data-target="#timepicker"/>
         <div class="input-group-append" data-target="#timepicker" data-toggle="timepicker">
         <div class="input-group-text"><i class="far fa-clock"></i></div>
+        </div>
         </div>
        
         <div class="mb-3">

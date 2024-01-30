@@ -24,34 +24,34 @@
         <form action="proses_form.php" method="POST" >
         <div class="mb-3">
             <label for="kodepj" class="form-label">Kode Penjadwalan</label>
-            <input type="kodepj"  name="kodepj" class="form-control" id="kodepj" aria-describedby="kodepjHelp">
+            <input type="nama"  name="kodepj" class="form-control" id="kodepj" aria-describedby="kodepjHelp">
             <div id="nimHelp" class="form-text"></div>
         </div>
         <div class="mb-3">
             <label for="kodekl" class="form-label">Kode Kelas</label>
-            <input type="kodekl"  name="kodekl" class="form-control" id="kodekl" aria-describedby="kodeklHelp">
+            <input type="nama"  name="kodekl" class="form-control" id="kodekl" aria-describedby="kodeklHelp">
             <div id="namaHelp" class="form-text"></div>
         </div>
        
         <div class="mb-3">
             <label for="kodemk" class="form-label">Kode MK</label>       
-            <input type="kodemk" name="kodemk"  class="form-control" id="kodemk" aria-describedby="kodemkHelp">
+            <input type="nama" name="kodemk"  class="form-control" id="kodemk" aria-describedby="kodemkHelp">
         </div>
        
 
         <div class="mb-3">
             <label for="mk" class="form-label">Mata Kuliah</label>
-            <input type="mk" name="mk" class="form-control" id="mk" aria-describedby="mkHelp">
+            <input type="nama" name="mk" class="form-control" id="mk" aria-describedby="mkHelp">
         </div>
 
         <div class="mb-3">
             <label for="tanggal" class="form-label">Hari</label>
-            <input type="date" name="tanggal" class="form-control" id="Tanggal" aria-describedby="tanggalHelp">
+            <input type="nama" name="tanggal" class="form-control" id="Tanggal" aria-describedby="tanggalHelp">
         </div>
 
         <div class="mb-3">
-        <label for="jam" class="form-label">JAM</label>
-        <input type="jam" class="form-control timepicker-input" data-target="#timepicker"/>
+        <label for="jam" class="form-label">Jam</label>
+        <input type="time" name="jam" class="form-control timepicker-input" data-target="#timepicker"/>
         <div class="input-group date" id="timepicker" data-target-input="nearest">
         <div class="input-group-append" data-target="#timepicker" data-toggle="timepicker">
         <div class="input-group-text"><i class="far fa-clock"></i></div>

@@ -12,6 +12,8 @@ include_once ("cek_login.php")
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -105,7 +107,7 @@ include_once ("cek_login.php")
                     <td><?php echo $data['dosen'] ?></td>
                     <td>
                       <a href ="form_edit.php?id=<?php echo $data['id'] ?>" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
-                      <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['kode_penjadwalan'] ?>"><i class="fa fa-trash"></i></button>
+                      <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['id'] ?>"><i class="fa fa-trash"></i></button>
                       <!-- Modal -->
                       <div class="modal fade" id="hapus<?php echo $data['id'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
                       <div class="modal-dialog">
@@ -212,5 +214,7 @@ include_once ("cek_login.php")
 </script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/all.js"></script>
 </body>
 </html>

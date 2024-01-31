@@ -57,7 +57,8 @@ include_once ("cek_login.php")
 
       <!-- Default box -->
       <div class="col-md-12 m-auto">
-      <a class="btn btn-outline-primary mb-1" href="form.php" ><i class="fa fa-user-plus"></i>  Tambah Jadwal </a>
+      <a class="btn btn-outline-primary mb-1" href="formpj.php" ><i class="fa fa-user-plus"></i>  Tambah Jadwal </a>
+      <br>
       <div class="card">
               <div class="card-header">
                 <h3 class="card-title">DataTable with default features</h3>

@@ -6,7 +6,7 @@ include_once ("cek_login.php")
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Penjadwalan| Blank Page</title>
+  <title>Mata Kuliah | Blank Page</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -27,6 +27,7 @@ include_once ("cek_login.php")
 
   <!-- Sidebar -->
   <?php include_once('sidebar.php') ?>
+
  
   
 
@@ -37,11 +38,11 @@ include_once ("cek_login.php")
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Penjadwalan</h1>
+            <h1>Data Mata Kuliah</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
               <li class="breadcrumb-item active">Blank Page</li>
             </ol>
           </div>
@@ -53,12 +54,9 @@ include_once ("cek_login.php")
     <section class="content">
 
       <!-- Default box -->
-      <div class="col-md-12 m-auto">
-      <a class="btn btn-outline-primary mb-1" href="formpj.php" ><i class="fa fa-calendar-plus"></i>  Tambah Jadwal </a>
-      <br>
       <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Jadwal</h3>
+                <h3 class="card-title">DataTable with default features</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -66,15 +64,8 @@ include_once ("cek_login.php")
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Kode penjadwalan</th>
-                    <th>Kode kelas</th>
                     <th>Kode MK</th>
                     <th>Mata Kuliah</th>
-                    <th>Hari</th>
-                    <th>Jam Mulai</th>
-                    <th>Jam Selesai</th>
-                    <th>NIP</th>
-                    <th>Dosen</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -84,7 +75,7 @@ include_once ("cek_login.php")
                     include_once("koneksi.php");
 
                     //2. membuat query utk menampilkan seluruh data 
-                    $qry = "SELECT * FROM penjadwalan";
+                    $qry = "SELECT * FROM mata_kuliah";
 
                     //3. menjalankan query
                     $tampil = mysqli_query($con,$qry);
@@ -94,20 +85,12 @@ include_once ("cek_login.php")
                   ?>
                   <tr>
                     <td><?php echo $nomor++ ?></td>
-                    <td><?php echo $data['kode_penjadwalan'] ?></td>
-                    <td><?php echo $data['kode_kelas'] ?></td>
                     <td><?php echo $data['kode_mk'] ?></td>
                     <td><?php echo $data['mata_kuliah'] ?></td>
-                    <td><?php echo $data['hari'] ?></td>
-                    <td><?php echo $data['jam_mulai'] ?></td>
-                    <td><?php echo $data['jam_selesai'] ?></td>
-                    <td><?php echo $data['nip'] ?></td>
-                    <td><?php echo $data['dosen'] ?></td>
-                    <td>
-                      <a href ="penjadwalan_edit.php" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
-                      <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['id'] ?>"><i class="fa fa-trash"></i></button>
+                    <td><a href ="mk_edit.php" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
+                      <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['kode_mk'] ?>"><i class="fa fa-trash"></i></button>
                       <!-- Modal -->
-                      <div class="modal fade" id="hapus<?php echo $data['id'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
+                      <div class="modal fade" id="hapus<?php echo $data['kode_mk'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
                       <div class="modal-dialog">
                           <div class="modal-content">
                           <div class="modal-header">
@@ -115,14 +98,14 @@ include_once ("cek_login.php")
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                              Apakah Penjadwalan Dengan kode <b><?php echo $data['id'] ?></b> Ingin Dihapus?
+                              Apakah Mata Kuliah Dengan kode mk <b><?php echo $data['kode_mk'] ?></b> Ingin Dihapus?
                           </div>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tidak</button>
-                              <a href= "proses_pjhapus.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Ya</a>
+                              <a href= "proses_mkhapus.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Ya</a>
                           </div>
                           </div>
-                      </div>
+                        
                       </div>
                     </td>
                   </tr>
@@ -131,18 +114,10 @@ include_once ("cek_login.php")
                   ?>
                   </tbody>
                   <tfoot>
-                  <tfoot>
                   <tr>
                     <th>No</th>
-                    <th>Kode penjadwalan</th>
-                    <th>Kode kelas</th>
                     <th>Kode MK</th>
                     <th>Mata Kuliah</th>
-                    <th>Hari</th>
-                    <th>Jam Mulai</th>
-                    <th>Jam Selesai</th>
-                    <th>NIP</th>
-                    <th>Dosen</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>
@@ -152,7 +127,7 @@ include_once ("cek_login.php")
             </div>
         <!-- /.card-body -->
         <div class="card-footer">
-       <?php   include_once('footer.php'); ?>
+          Footer
         </div>
         <!-- /.card-footer-->
       </div>
@@ -165,8 +140,8 @@ include_once ("cek_login.php")
 <!-- footer -->
 
   
- <!-- Control Sidebar -->
- <aside class="control-sidebar control-sidebar-dark">
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->

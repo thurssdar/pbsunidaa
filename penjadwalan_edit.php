@@ -31,7 +31,7 @@ $pjd = mysqli_fetch_array($data);
     Edit Jadwal
   </div>
   <div class="card-body">
-        <form action="proses_form.php" method="POST" >
+        <form action="proses_pjedit.php" method="POST" >
         <input type="hidden" name="id" value="<?php echo $pjd['id']?>" >
         <div class="mb-3">
             <label for="kode_penjadwalan" class="form-label">Kode Penjadwalan</label>
@@ -62,12 +62,12 @@ $pjd = mysqli_fetch_array($data);
 
         <div class="mb-3">
         <label for="jam_mulai" class="form-label">Jam Mulai</label>
-        <input type="time" value="<?php echo $pjd['jam_mulai']?>" name="jam_mulai" class="form-control timepicker-input" data-target="#timepicker"/>
+        <input type="time" value="<?php echo $pjd['jam_mulai']?>" name="jam_mulai" id="jam_mulai" class="form-control timepicker-input" data-target="#timepicker"/>
         </div>
 
         <div class="mb-3">
         <label for="jam_selesai" class="form-label">Jam Selesai</label>
-        <input type="time" value="<?php echo $pjd['jam_selesai']?>" name="jam_selesai" class="form-control timepicker-input" data-target="#timepicker"/>
+        <input type="time" value="<?php echo $pjd['jam_selesai']?>" name="jam_selesai"  id="jam_selesai"class="form-control timepicker-input" data-target="#timepicker"/>
         </div>
        
         <div class="mb-3">

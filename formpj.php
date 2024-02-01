@@ -34,7 +34,7 @@ include_once ("cek_login.php")
         <div class="col-md-6 m-auto mt-3">
         <div class="card">
   <div class="card-header">
-    form pendaftaran
+    Tambah Jadwal
   </div>    
         <div class="card-body">
         <form action="proses_formpj.php" method="POST" >

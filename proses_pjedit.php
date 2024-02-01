@@ -22,5 +22,5 @@ $simpan = mysqli_query($con,$qry);
 //5. ALihkan ke halaman index.php
 ?>
 <script>
-    document.location="index.php";
+    document.location="penjadwalan.php";
 </script>

@@ -43,10 +43,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="matakuliah.php" class="nav-link">
+              <i class="nav-icon fas fa-solid fa-book"></i>
               <p>
-                Penilaian
+                Mata Kuliah
               </p>
             </a>
           </li>

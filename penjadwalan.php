@@ -61,7 +61,7 @@ include_once ("cek_login.php")
       <br>
       <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title">Jadwal</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -107,7 +107,7 @@ include_once ("cek_login.php")
                     <td><?php echo $data['nip'] ?></td>
                     <td><?php echo $data['dosen'] ?></td>
                     <td>
-                      <a href ="form_edit.php?id=<?php echo $data['id'] ?>" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
+                      <a href ="penjadwalan_edit.php" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
                       <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['id'] ?>"><i class="fa fa-trash"></i></button>
                       <!-- Modal -->
                       <div class="modal fade" id="hapus<?php echo $data['id'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
@@ -122,7 +122,7 @@ include_once ("cek_login.php")
                           </div>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tidak</button>
-                              <a href= "proses_hapus.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Ya</a>
+                              <a href= "penjadwalan_hapus.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Ya</a>
                           </div>
                           </div>
                       </div>
@@ -155,7 +155,7 @@ include_once ("cek_login.php")
             </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          Footer
+       <?php   include_once('footer.php'); ?>
         </div>
         <!-- /.card-footer-->
       </div>

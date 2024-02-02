@@ -66,15 +66,12 @@ include_once ("cek_login.php")
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Kode penjadwalan</th>
-                    <th>Kode kelas</th>
-                    <th>Kode MK</th>
                     <th>Mata Kuliah</th>
                     <th>Hari</th>
                     <th>Jam Mulai</th>
                     <th>Jam Selesai</th>
-                    <th>NIP</th>
                     <th>Dosen</th>
+                    <th></th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -94,20 +91,19 @@ include_once ("cek_login.php")
                   ?>
                   <tr>
                     <td><?php echo $nomor++ ?></td>
-                    <td><?php echo $data['kode_penjadwalan'] ?></td>
-                    <td><?php echo $data['kode_kelas'] ?></td>
-                    <td><?php echo $data['kode_mk'] ?></td>
                     <td><?php echo $data['mata_kuliah'] ?></td>
                     <td><?php echo $data['hari'] ?></td>
                     <td><?php echo $data['jam_mulai'] ?></td>
                     <td><?php echo $data['jam_selesai'] ?></td>
-                    <td><?php echo $data['nip'] ?></td>
                     <td><?php echo $data['dosen'] ?></td>
-                    <td>
-                      <a href ="penjadwalan_edit.php" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
-                      <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['id'] ?>"><i class="fa fa-trash"></i></button>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl">
+                     Launch Extra Large Modal
+                    </button>
+                    <td> 
+                      <a href ="penjadwalan_edit.php?id_pj=<?php echo $data['id_pj'] ?>" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
+                      <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['id_pj'] ?>"><i class="fa fa-trash"></i></button>
                       <!-- Modal -->
-                      <div class="modal fade" id="hapus<?php echo $data['id'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
+                      <div class="modal fade" id="hapus<?php echo $data['id_pj'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
                       <div class="modal-dialog">
                           <div class="modal-content">
                           <div class="modal-header">
@@ -115,11 +111,11 @@ include_once ("cek_login.php")
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                              Apakah Penjadwalan Dengan kode <b><?php echo $data['id'] ?></b> Ingin Dihapus?
+                              Apakah Penjadwalan Dengan Mata Kuliah <b><?php echo $data['mata_kuliah'] ?></b> Ingin Dihapus?
                           </div>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tidak</button>
-                              <a href= "proses_pjhapus.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Ya</a>
+                              <a href= "proses_pjhapus.php?id_pj=<?php echo $data['id_pj'] ?>" class="btn btn-danger">Ya</a>
                           </div>
                           </div>
                       </div>
@@ -134,15 +130,12 @@ include_once ("cek_login.php")
                   <tfoot>
                   <tr>
                     <th>No</th>
-                    <th>Kode penjadwalan</th>
-                    <th>Kode kelas</th>
-                    <th>Kode MK</th>
                     <th>Mata Kuliah</th>
                     <th>Hari</th>
                     <th>Jam Mulai</th>
                     <th>Jam Selesai</th>
-                    <th>NIP</th>
                     <th>Dosen</th>
+                    <th></th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

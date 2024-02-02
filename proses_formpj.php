@@ -14,8 +14,8 @@ $nip = $_POST['nip'];
 $dosen = $_POST['dosen'];
 
 //3. Membuat query update
-$qry = "INSERT INTO penjadwalan (kode_kelas,kode_mk,mata_kuliah,hari,jam_mulai,jam_selesai,nip,dosen,)
- VALUES ('$kode_kelas','$kode_mk','$mata_kuliah','$hari','$jam_mulai','$jam_selesai','$nip','$dosen')";
+$qry = "INSERT INTO penjadwalan (kode_penjadwalan,kode_kelas,kode_mk,mata_kuliah,hari,jam_mulai,jam_selesai,nip,dosen)
+ VALUES ('$kode_penjadwalan','$kode_kelas','$kode_mk','$mata_kuliah','$hari','$jam_mulai','$jam_selesai','$nip','$dosen')";
 
 //4. Menjalankan Query
 $simpan = mysqli_query($con,$qry);

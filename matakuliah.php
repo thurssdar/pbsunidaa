@@ -54,6 +54,8 @@ include_once ("cek_login.php")
     <section class="content">
 
       <!-- Default box -->
+      <div class="col-md-12 m-auto">
+      <a class="btn btn-outline-primary mb-1" href="formmk.php" ><i class="fa fa-calendar-plus"></i>  Tambah MK </a>
       <div class="card">
               <div class="card-header">
                 <h3 class="card-title">DataTable with default features</h3>
@@ -127,7 +129,7 @@ include_once ("cek_login.php")
             </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          Footer
+          <?php include_once('footer.php'); ?>
         </div>
         <!-- /.card-footer-->
       </div>

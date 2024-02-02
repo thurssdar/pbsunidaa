@@ -1,15 +1,15 @@
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color:#6499E9 ;">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button" style="color:#ffffff;"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+      <li class="nav-item d-none d-sm-inline-block" style="color:#ffffff;">
+        <a href="index3.html" class="nav-link" style="color:#ffffff;">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="logout.php" class="nav-link">Logout</a>
+      <li class="nav-item d-none d-sm-inline-block" style="color:#ffffff;">
+        <a href="logout.php" class="nav-link" style="color:#ffffff;">Logout</a>
       </li>
     </ul>
 </nav>

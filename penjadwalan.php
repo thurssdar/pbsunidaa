@@ -6,7 +6,7 @@ include_once ("cek_login.php")
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Penjadwalan| Blank Page</title>
+  <title>PBS UNIDA | Blank Page</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -22,12 +22,13 @@ include_once ("cek_login.php")
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
-  <!-- navbar -->
+  <!-- Navbar -->
   <?php include_once('navbar.php') ?>
+  <!-- /.navbar -->
 
-  <!-- Sidebar -->
+  <!-- Main Sidebar Container -->
   <?php include_once('sidebar.php') ?>
- 
+
   
 
   <!-- Content Wrapper. Contains page content -->
@@ -39,12 +40,7 @@ include_once ("cek_login.php")
           <div class="col-sm-6">
             <h1>Penjadwalan</h1>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li>
-            </ol>
-          </div>
+          
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -65,7 +61,6 @@ include_once ("cek_login.php")
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>No</th>
                     <th>Mata Kuliah</th>
                     <th>Hari</th>
                     <th>Jam Mulai</th>
@@ -90,7 +85,6 @@ include_once ("cek_login.php")
                   foreach($tampil as $data){
                   ?>
                   <tr>
-                    <td><?php echo $nomor++ ?></td>
                     <td><?php echo $data['mata_kuliah'] ?></td>
                     <td><?php echo $data['hari'] ?></td>
                     <td><?php echo $data['jam_mulai'] ?></td>
@@ -101,18 +95,17 @@ include_once ("cek_login.php")
                      Detail
                     </button>
                     <!-- Modal -->
-                <div class="modal fade" id="modal-xl<?php echo $data['id_pj'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal fade" id="modal-xl<?php echo $data['id_pj'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                    <div class="modal-content modal-xl">
+                    <div class="modal-header modal-xl">
                         <h1 class="modal-title fs-5" id="modal-xl">Data Detail <?php echo $data['kode_penjadwalan'] ?></h1>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body" id="modal-xl">
+                    <div class="modal-dialog modal-xl">
                     <table class="table">
                     <thead>
                       <tr>
-                        <th scope="col">Nomor</th>
                         <th scope="col">Kode Penjadwalan</th>
                         <th scope="col">Kode Kelas</th>
                         <th scope="col">Kode MK</th>
@@ -126,7 +119,6 @@ include_once ("cek_login.php")
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row"><?php echo $nomor++ ?></th>
                         <td><?php echo $data['kode_penjadwalan'] ?></td>
                         <td><?php echo $data['kode_kelas'] ?></td>
                         <td><?php echo $data['kode_mk'] ?></td>
@@ -178,7 +170,6 @@ include_once ("cek_login.php")
                   <tfoot>
                   <tfoot>
                   <tr>
-                    <th>No</th>
                     <th>Mata Kuliah</th>
                     <th>Hari</th>
                     <th>Jam Mulai</th>

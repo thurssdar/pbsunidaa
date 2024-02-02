@@ -94,7 +94,7 @@ $pjd = mysqli_fetch_array($data);
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a class="btn btn-secondary" href = "index.php"> Batal </a>
+        <a class="btn btn-secondary" href = "penjadwalan.php"> Batal </a>
         </form>
   </div>
 

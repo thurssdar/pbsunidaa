@@ -1,5 +1,5 @@
 <?php
-$sidebar ='#6499E9';
+$sidebar ='#637A9F';
 ?>
 
 <!-- Main Sidebar Container -->
@@ -15,11 +15,11 @@ $sidebar ='#6499E9';
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex" >
         <div class="image">
           <img src="dist/img/avatar4.png" class="img-circle elevation-2" alt="User Image">
         </div>
-        <div class="info">
+        <div class="info" >
           <a style="color:#ffffff;" href="#" class="d-block"><?php echo $l_nama ?>></a>
         </div>
       </div>

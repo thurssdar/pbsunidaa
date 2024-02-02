@@ -6,7 +6,7 @@ include_once ("cek_login.php")
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mata Kuliah | Blank Page</title>
+  <title>Penjadwalan| Blank Page</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -27,7 +27,6 @@ include_once ("cek_login.php")
 
   <!-- Sidebar -->
   <?php include_once('sidebar.php') ?>
-
  
   
 
@@ -38,14 +37,9 @@ include_once ("cek_login.php")
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Data Mata Kuliah</h1>
+            <h1>Mata Kuliah</h1>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li>
-            </ol>
-          </div>
+          
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -55,17 +49,17 @@ include_once ("cek_login.php")
 
       <!-- Default box -->
       <div class="col-md-12 m-auto">
-      <a class="btn btn-outline-primary mb-1" href="formmk.php" ><i class="fa fa-book-plus"></i>  Tambah MK </a>
+      <a class="btn btn-outline-primary mb-1" href="formpj.php" ><i class="fa fa-calendar-plus"></i>  Tambah Jadwal </a>
+      <br>
       <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title">Mata Kuliah</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>No</th>
                     <th>Kode MK</th>
                     <th>Mata Kuliah</th>
                     <th>Action</th>
@@ -86,13 +80,13 @@ include_once ("cek_login.php")
                   foreach($tampil as $data){
                   ?>
                   <tr>
-                    <td><?php echo $nomor++ ?></td>
                     <td><?php echo $data['kode_mk'] ?></td>
                     <td><?php echo $data['mata_kuliah'] ?></td>
-                    <td><a href ="matakuliah_edit.php" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
-                      <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['kode_mk'] ?>"><i class="fa fa-trash"></i></button>
+                    <td> 
+                      <a href ="matakuliah_edit.php?id_mk=<?php echo $data['id_mk'] ?>" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
+                      <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['id_mk'] ?>"><i class="fa fa-trash"></i></button>
                       <!-- Modal -->
-                      <div class="modal fade" id="hapus<?php echo $data['kode_mk'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
+                      <div class="modal fade" id="hapus<?php echo $data['id_mk'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
                       <div class="modal-dialog">
                           <div class="modal-content">
                           <div class="modal-header">
@@ -100,14 +94,14 @@ include_once ("cek_login.php")
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                              Apakah Mata Kuliah  <b><?php echo $data['mata_kuliah'] ?></b> Ingin Dihapus?
+                              Apakah Mata Kuliah <b><?php echo $data['mata_kuliah'] ?></b> Ingin Dihapus?
                           </div>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tidak</button>
-                              <a href= "proses_formmk.php?id_mk=<?php echo $data['id_mk'] ?>" class="btn btn-danger">Ya</a>
+                              <a href= "proses_mkhapus.php?id_mk=<?php echo $data['id_mk'] ?>" class="btn btn-danger">Ya</a>
                           </div>
                           </div>
-                        
+                      </div>
                       </div>
                     </td>
                   </tr>
@@ -116,8 +110,8 @@ include_once ("cek_login.php")
                   ?>
                   </tbody>
                   <tfoot>
+                  <tfoot>
                   <tr>
-                    <th>No</th>
                     <th>Kode MK</th>
                     <th>Mata Kuliah</th>
                     <th>Action</th>
@@ -127,15 +121,8 @@ include_once ("cek_login.php")
               </div>
               <!-- /.card-body -->
             </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          <?php include_once('footer.php'); ?>
-        </div>
-        <!-- /.card-footer-->
-      </div>
-      <!-- /.card -->
 
-      </section>
+            </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

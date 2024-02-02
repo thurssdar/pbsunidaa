@@ -55,7 +55,7 @@ include_once ("cek_login.php")
 
       <!-- Default box -->
       <div class="col-md-12 m-auto">
-      <a class="btn btn-outline-primary mb-1" href="formmk.php" ><i class="fa fa-calendar-plus"></i>  Tambah MK </a>
+      <a class="btn btn-outline-primary mb-1" href="formmk.php" ><i class="fa fa-book-plus"></i>  Tambah MK </a>
       <div class="card">
               <div class="card-header">
                 <h3 class="card-title">DataTable with default features</h3>
@@ -89,7 +89,7 @@ include_once ("cek_login.php")
                     <td><?php echo $nomor++ ?></td>
                     <td><?php echo $data['kode_mk'] ?></td>
                     <td><?php echo $data['mata_kuliah'] ?></td>
-                    <td><a href ="mk_edit.php" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
+                    <td><a href ="matakuliah_edit.php" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
                       <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['kode_mk'] ?>"><i class="fa fa-trash"></i></button>
                       <!-- Modal -->
                       <div class="modal fade" id="hapus<?php echo $data['kode_mk'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
@@ -100,11 +100,11 @@ include_once ("cek_login.php")
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                              Apakah Mata Kuliah Dengan kode mk <b><?php echo $data['kode_mk'] ?></b> Ingin Dihapus?
+                              Apakah Mata Kuliah  <b><?php echo $data['mata_kuliah'] ?></b> Ingin Dihapus?
                           </div>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tidak</button>
-                              <a href= "proses_mkhapus.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Ya</a>
+                              <a href= "proses_formmk.php?id_mk=<?php echo $data['id_mk'] ?>" class="btn btn-danger">Ya</a>
                           </div>
                           </div>
                         
@@ -135,13 +135,13 @@ include_once ("cek_login.php")
       </div>
       <!-- /.card -->
 
-    </section>
+      </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-<!-- footer -->
 
-  
+  <?php include_once('footer.php')?>
+
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -169,7 +169,7 @@ include_once ("cek_login.php")
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
-!-- Page specific script 
+<!-- Page specific script -->
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -187,7 +187,5 @@ include_once ("cek_login.php")
     });
   });
 </script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
 </body>
 </html>

@@ -96,9 +96,58 @@ include_once ("cek_login.php")
                     <td><?php echo $data['jam_mulai'] ?></td>
                     <td><?php echo $data['jam_selesai'] ?></td>
                     <td><?php echo $data['dosen'] ?></td>
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl">
-                     Launch Extra Large Modal
+                    <td>
+                    <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modal-xl<?php echo $data['id_pj'] ?>">
+                     Detail
                     </button>
+                    <!-- Modal -->
+                <div class="modal fade" id="modal-xl<?php echo $data['id_pj'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal-xl">Data Detail <?php echo $data['kode_penjadwalan'] ?></h1>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="modal-xl">
+                    <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nomor</th>
+                        <th scope="col">Kode Penjadwalan</th>
+                        <th scope="col">Kode Kelas</th>
+                        <th scope="col">Kode MK</th>
+                        <th scope="col">Mata Kuliah</th>
+                        <th scope="col">Hari</th>
+                        <th scope="col">Jam Mulai</th>
+                        <th scope="col">Jam Selesai</th>
+                        <th scope="col">NIP</th>
+                        <th scope="col">Dosen</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><?php echo $nomor++ ?></th>
+                        <td><?php echo $data['kode_penjadwalan'] ?></td>
+                        <td><?php echo $data['kode_kelas'] ?></td>
+                        <td><?php echo $data['kode_mk'] ?></td>
+                        <td><?php echo $data['mata_kuliah'] ?></td>
+                        <td><?php echo $data['hari'] ?></td>
+                        <td><?php echo $data['jam_mulai'] ?></td>
+                        <td><?php echo $data['jam_selesai'] ?></td>
+                        <td><?php echo $data['nip'] ?></td>
+                        <td><?php echo $data['dosen'] ?></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+                        </div>
+                        </div>
+                    </td>
+                   
                     <td> 
                       <a href ="penjadwalan_edit.php?id_pj=<?php echo $data['id_pj'] ?>" class="btn btn-outline-secondary"><i class="fa fa-pencil-alt"></i></a>
                       <button  type="button"  class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['id_pj'] ?>"><i class="fa fa-trash"></i></button>
@@ -143,23 +192,16 @@ include_once ("cek_login.php")
               </div>
               <!-- /.card-body -->
             </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-       <?php   include_once('footer.php'); ?>
-        </div>
-        <!-- /.card-footer-->
-      </div>
-      <!-- /.card -->
 
-    </section>
+            </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-<!-- footer -->
 
-  
- <!-- Control Sidebar -->
- <aside class="control-sidebar control-sidebar-dark">
+  <?php include_once('footer.php')?>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
@@ -185,7 +227,7 @@ include_once ("cek_login.php")
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
-!-- Page specific script 
+<!-- Page specific script -->
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -203,7 +245,5 @@ include_once ("cek_login.php")
     });
   });
 </script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
 </body>
 </html>

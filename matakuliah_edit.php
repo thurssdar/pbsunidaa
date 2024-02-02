@@ -1,5 +1,12 @@
+
 <?php
-include_once ("cek_login.php")
+include_once("koneksi.php");
+$id_pj = $_GET['id_mk'];
+$qry = "SELECT * FROM mata_kuliah WHERE id_mk='$id_mk'";
+$data = mysqli_query($con,$qry);
+
+$mk = mysqli_fetch_array($data);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,21 +41,23 @@ include_once ("cek_login.php")
         <div class="col-md-6 m-auto mt-3">
         <div class="card">
   <div class="card-header">
-    Tambah MK
+    Edit MK
   </div>    
         <div class="card-body">
-        <form action="proses_formmk.php" method="POST" >
+        <form action="proses_pjedit.php" method="POST" >
+        <input type="hidden" name="id" value="<?php echo $mk['id_mk']?>" >
+
         <div class="mb-3">
-            <label for="kode_mk" class="form-label">Kode MK</label>
-            <input type="name"  name="kode_mk" class="form-control" id="kode_mk" aria-describedby="kode_mkHelp">
-            <div id="kode_mk" class="form-text"></div>
-        </div>
-        <div class="mb-3">
-            <label for="mata_kuliah" class="form-label">Mata Kuliah</label>
-            <input type="nama"  name="mata_kuliah" class="form-control" id="mata_kuliah" aria-describedby="mata_kuliahHelp">
-            <div id="mata_kuliah" class="form-text"></div>
+            <label for="kode_mk" class="form-label">Kode MK</label>       
+            <input type="nama" name="kode_mk" value="<?php echo $mk['kode_mk']?>"  class="form-control" id="kode_mk" aria-describedby="kode_mkHelp">
         </div>
        
+
+        <div class="mb-3">
+            <label for="mata_kuliah" class="form-label">Mata Kuliah</label>
+            <input type="nama" name="mata_kuliah" value="<?php echo $mk['mata_kuliah']?>" class="form-control" id="mata_kuliah" aria-describedby="mata_kuliahHelp">
+        </div>
+        
         <button type="submit" class="btn btn-primary">Submit</button>
         <a class="btn btn-secondary" href = "matakuliah.php"> Batal </a>
         </form>

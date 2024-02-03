@@ -6,7 +6,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button" style="color:#ffffff;"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block" style="color:#ffffff;">
-        <a href="index3.html" class="nav-link" style="color:#ffffff;">Home</a>
+        <a href="index.php" class="nav-link" style="color:#ffffff;">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block" style="color:#ffffff;">
         <a href="logout.php" class="nav-link" style="color:#ffffff;">Logout</a>

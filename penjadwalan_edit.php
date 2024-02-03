@@ -45,7 +45,7 @@ $pjd = mysqli_fetch_array($data);
   </div>    
         <div class="card-body">
         <form action="proses_pjedit.php" method="POST" >
-        <input type="hidden" name="id" value="<?php echo $pjd['id_pj']?>" >
+        <input type="hidden" name="id_pj" value="<?php echo $pjd['id_pj']?>" >
         <div class="mb-3">
             <label for="kode_penjadwalan" class="form-label">Kode Penjadwalan</label>
             <input type="nama"  name="kode_penjadwalan" value="<?php echo $pjd['kode_penjadwalan']?>" class="form-control" id="kode_penjadwalan" aria-describedby="kodepjHelp">

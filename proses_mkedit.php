@@ -3,6 +3,7 @@
 include_once("koneksi.php");
 
 //2. Mengambil Seluruh Nilai Input Dan Dimasukkan Dalam Variabel
+$id_mk = $_POST['id_mk'];
 $kode_mk = $_POST['kode_mk'];
 $mata_kuliah = $_POST['mata_kuliah'];
 

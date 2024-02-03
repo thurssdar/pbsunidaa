@@ -56,7 +56,38 @@ include_once("cek_login.php");
             </div>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
+      <div class="container-fluid">
+      <div class="row">
+      <div class="col-lg-6 col-6">
+            <!-- small box -->
+            <div class="small-box" style="background-color: #6E85B7;">
+              <div class="inner">
+
+              <h3 style="color:#ffffff;" ><p>Mata Kuliah</p></h3>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="matakuliah.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-6">
+            <!-- small box -->
+            <div class="small-box" style="background-color: #4F709C;">
+              <div class="inner">
+
+                <h3 style="color:#ffffff;" ><p>Penjadwalan</p></h3>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="penjadwalan.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+      </div>
+      </div>
+      <!-- /.container-fluid -->
     </section>
 
     <!-- Main content -->
